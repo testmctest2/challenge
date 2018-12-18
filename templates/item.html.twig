@@ -1,0 +1,34 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 new">
+            <h1>{{ data.title }}</h1>
+            <a href="{{ data.url }}">({{ data.host }})</a>
+            <p>{{ data.score }} points by {{ data.by }} {{ data.time |date("m/d/Y") }} 
+                | {{ data.descendants }} comments</p>
+        </div>
+        {% if comments | length > 0 %}
+        <ul class="col-12 col-sm-12 col-md-12 col-lg-12">
+            {% for comment in comments %}
+                <li>
+                    <p class="comment">By {{ comment.by }} {{ comment.time |date("m/d/Y") }}</p> 
+                    {% autoescape %}
+                        {{ comment.text | raw }} {# var won't be escaped #}
+                    {% endautoescape %}
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{#
+  "by" : "gbacon",
+  "id" : 16842392,
+  "kids" : [ 16842699, 16842457 ],
+  "parent" : 16841449,
+  "text" : "<i>In an opinion piece for The Daily Caller and on his site, Rep. Peter Roskam, R-Ill., said “making the tax collector also the tax preparer creates an inherent conflict of interest while forcing citizens to relinquish control of their taxes to the government.”</i><p>The government already controls taxes and thus citizens’ incomes. In a time when so many are worried about privacy, few voice any concern about the enormous privacy problems inherent in the forced full disclosure of the intimate details of one’s financial affairs.<p>Fiscal year 2019 is forecast to have federal revenue of $3.422 trillion[0], of which $1.688 trillion will be from individual income taxes. That means repealing the income tax and replacing it with nothing would take the federal budget not back to the founding era or even the nineteenth century but to the Clinton years[1].<p>[0]: <a href=\"https:&#x2F;&#x2F;www.thebalance.com&#x2F;current-u-s-federal-government-tax-revenue-3305762\" rel=\"nofollow\">https:&#x2F;&#x2F;www.thebalance.com&#x2F;current-u-s-federal-government-ta...</a><p>[1]: <a href=\"http:&#x2F;&#x2F;www.taxpolicycenter.org&#x2F;statistics&#x2F;federal-receipt-and-outlay-summary\" rel=\"nofollow\">http:&#x2F;&#x2F;www.taxpolicycenter.org&#x2F;statistics&#x2F;federal-receipt-an...</a>",
+  "time" : 1523795561,
+  "type" : "comment"
+#}

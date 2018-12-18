@@ -1,0 +1,30 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <ol class="row">
+        {% for e in data %}
+        <li class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <p class="title"><a href="{{ e.url }}">{{ e.title }}</a> <a class="host" href="{{ e.url }}">({{ e.host }})</a></p>
+            <p>{{ e.score }} points by {{ e.by }} {{ e.time |date("m/d/Y") }} 
+                | <a href="/index.php/item/{{ e.id }}">{{ e.descendants }} comments </a></p>
+        </li>
+        {% endfor %}
+    </ol>
+{% endblock %}
+
+{#
+
+H&R Block and Intuit Lobbying Against Simpler Tax Filing (2017) (propublica.org)
+247 points by bajsejohannes 7 hours ago | hide | 58 comments
+{
+  "by" : "bajsejohannes",
+  "descendants" : 45,
+  "id" : 16841449,
+  "kids" : [ 16841697, 16841707, 16841688, 16842064, 16841992, 16841665, 16842205, 16841941, 16841832, 16841974, 16841718 ],
+  "score" : 189,
+  "time" : 1523771712,
+  "title" : "H&R Block and Intuit Lobbying Against Simpler Tax Filing (2017)",
+  "type" : "story",
+  "url" : "https://www.propublica.org/article/filing-taxes-could-be-free-simple-hr-block-intuit-lobbying-against-it#"
+}
+#}

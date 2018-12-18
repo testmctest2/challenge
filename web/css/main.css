@@ -1,0 +1,52 @@
+header {
+    background-color: #151515;
+    color: white;
+    margin-bottom: 50px;
+    padding: 20px 0;
+}
+header ul {
+    list-style: none;
+    margin: 0;
+}
+header ul li a {
+    color: white;
+    font-size: 24px;
+}
+nav ul li {
+    margin: 0;
+}
+ol li a {
+    color: #A4A4A4
+}
+ol li p {
+    color:#A4A4A4;
+}
+ol li p.title {
+    margin: 0;
+}
+ol li p.title a {
+    color: #151515;
+    font-size: 1.5rem;
+}
+ol li p.title a.host {
+    color: #A4A4A4;
+    font-size: 1rem;
+}
+p.comment {
+    color: #A4A4A4;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+ul {
+    list-style: none;
+}
+ul li {
+    margin-top: 40px;
+}
+
+.new, .new a {
+    color: #A4A4A4;
+}
+.new h1 {
+    color: #151515;
+}
